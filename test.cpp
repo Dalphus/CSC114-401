@@ -5,7 +5,7 @@
 #include <string> //strings, duh
 #include <iomanip> //input/output manipulation
 #include <cmath> //sin, cos, sqrt, that stuff
-#include <cstdlib> //rand(), srand(), other stuff amybe
+#include <cstdlib> //rand(), srand(), other stuff
 
 using namespace std;
 
@@ -14,32 +14,14 @@ int primeNums[MAX];
 
 int main(void)
 {
-	primeNums[0] = 2;
-	int step = 0;
+	bool f = false;
+	bool t = true;
+	int five = 5;
 
-	while (step < MAX) {
-
-		int num = primeNums[step];
-
-		bool isPrime = 0;
-		while (!isPrime) {
-			num++;
-			cout << "prime " << num << endl;
-			isPrime = 1;
-			for (int prime = 0; prime <= step; 1) {
-				cout << "test " << primeNums[prime] << endl;
-				if (!num % primeNums[prime]) {
-					isPrime = 0;
-					break;
-				}
-			}
-		}
-		primeNums[step++] = num;
-	}
-
-	for each (int number in primeNums) {
-		cout << number << endl;
-	}
+	cout << "t > f: " << (t > f) << endl;
+	cout << "t < f: " << (t < f) << endl;
+	cout << "t + f: " << (t + f) << endl;
+	cout << "!!five: " << (!!five) << endl;
 
 	_getch();
 	return 0;
