@@ -8,6 +8,10 @@ Lab 6*/
 
 using namespace std;
 
+double calculateRetail(double cost, double markup) {
+	return cost * ((markup+100) / 100);
+}
+
 int main() {
 	double cost, markup;
 	cout << "Items wholesale cost: $";
@@ -15,7 +19,7 @@ int main() {
 	cout << "Markup perctentage: ";
 	cin >> markup;
 
-	cout << "Retail cost: $" << fixed << setprecision(2) << cost * ((markup+100) / 100) << endl;
+	cout << "Retail cost: $" << fixed << setprecision(2) << calculateRetail(cost,markup) << endl;
 
 	_getch();
 	return 0;
