@@ -4,15 +4,19 @@
 
 using namespace std;
 
-string toString(int x) {
-	string num;
-	num.h;
-
-	return num;
-}
-
 int main() {
-	cout << toString(10) << endl;
+	int x;
+	cout << "test: ";
+	cin >> x;
+	cout << x << endl;
+
+	cin.clear();
+	cin.ignore(256, '\n');
+
+	cout << "test2: ";
+	cin >> x;
+	cout << x << endl;
+
 
 	_getch();
 	return 0;

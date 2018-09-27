@@ -8,26 +8,14 @@ Lab 4*/
 using namespace std;
 
 int main() {
-	int n, sum = 0;
+	int n = 0, sum = 0;
 
 	//loop for input
-	while (true) {
-		//prompt user for input
-		cout << "Input a positive integer: ";
-		cin >> n;
-
-		//stop code if input is not an integer
-		if (cin.fail()) {
-			cout << "invlaid input";
-			_getch();
-			return 0;
-		}
-
-		//break out of loop if x > 0
-		if (n > 0)
-			break;
-		else
-			cout << "That is not a positive integer" << endl;
+	cout << "Input a number between 1 and 50: ";
+	while (!(cin >> n) || cin.get() != '\n' || n < 1 || n > 50) {
+		cout << "Invalid input, try again: ";
+		cin.clear();
+		cin.ignore(256, '\n');
 	}
 	cout << endl;
 
