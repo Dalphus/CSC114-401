@@ -30,7 +30,7 @@ int main() {
 
 	//rectangle area calulation
 	area[0] = rect[0] * rect[1];
-	area[1] = rect[2] * rect[2];
+	area[1] = rect[2] * rect[3];
 
 	//display which rectangle is bigger
 	if (area[0] > area[1])
