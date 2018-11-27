@@ -25,7 +25,7 @@ int main() {
 	while (true) {
 		//input validation
 		cout << "Enter collumns: ";
-		while (!(cin >> collumns) || cin.get() != '\n' || collumns > MIN_PRODUCT) {
+		while (!(cin >> collumns) || cin.peek() != '\n' || collumns > MIN_PRODUCT) {
 			cout << "Invlaid input, must be an integer less than " << MIN_PRODUCT << endl
 				<< "Enter collumns: ";
 			cin.clear();

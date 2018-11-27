@@ -6,7 +6,13 @@
 using namespace std;
 
 int dayOfWeek(int year, int month) {
-	f = 1 + floor((13 * month - 1) / 5) + D + floor(D / 4) + floor(C / 4) - 2 * C.
+	month = (month + 10) % 12 + 1;
+	year -= month > 10;
+	int D = year % 100, C = (year - D) / 100;
+
+	int f = 1 + ((13 * month - 1) / 5) + D + (D / 4) + (C / 4) - (2 * C);
+
+	return ((f % 7) + 7) % 7;
 }
 
 int main() {
@@ -15,11 +21,12 @@ int main() {
 		"January", "February", "March", "April", "May", "June",
 		"July", "August", "September", "October", "November", "December"
 	};
-	int days[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+	int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-	int month = 1;
-	int year = 2000;
-	int weekday = 1;
+	int month = 0;
+	int year = 2018;
+	int weekday = dayOfWeek(year,month);
+
 	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
 		days[1]++;
 
