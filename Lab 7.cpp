@@ -17,9 +17,6 @@ void coinToss() {
 	case(2):
 		cout << "tails";
 		break;
-	default:
-		cout << "error";
-		break;
 	}
 	cout << endl;
 }

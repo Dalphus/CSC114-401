@@ -3,31 +3,26 @@
 
 using namespace std;
 
-const int MAX = 2000;
-int primeNums[MAX];
+const int MAX = 10;
+int primeNums[MAX], index = 1;
 
 int main() {
 	primeNums[0] = 2;
-	primeNums[1] = 3;
-
-	int step = 1;
-	while (step < MAX) {
-		bool isPrime = 0;
-		int num = primeNums[step];
-		while (!isPrime) {
-			num += 2;
-			for (int prime = 0; prime <= step; prime++) {
-				isPrime = 1;
-				if (num % primeNums[prime] == 0) {
-					isPrime = 0;
-					break;
-				}
+	for (int i = 2; i <= MAX; i++) {
+		bool isPrime = true;
+		for (int j : primeNums) {
+			if (i%j == 0) {
+				isPrime = false;
+				break;
+			}
+			if (isPrime) {
+				primeNums[index] = i;
+				index++;
 			}
 		}
-		primeNums[++step] = num;
 	}
 
-	for each (int number in primeNums) {
+	for (int number : primeNums) {
 		cout << number << endl;
 	}
 
